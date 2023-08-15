@@ -1,11 +1,18 @@
 import { EuiProvider } from "@elastic/eui";
 import "@elastic/eui/dist/eui_theme_dark.css";
 import React from "react";
+import { Routes,Route} from "react-router-dom"
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
 
-const App = () => {
+function App () {
   return (
     <EuiProvider>
-    <div>App</div>
+    <Routes>
+    <Route path="/login" element={<Login />}/>
+    <Route path="/" element={<Dashboard/>}/>
+    <Route path="*" element={<Dashboard/>}/>
+    </Routes>
     </EuiProvider>
   );
 }
